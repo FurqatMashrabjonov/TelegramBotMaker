@@ -1,0 +1,38 @@
+{
+    "commands": [
+        {
+            "command": "hello",
+            "actions": [
+                {
+                    "action": "chatAction",
+                    "args": {
+                        "action": "typing"
+                    }
+                },
+                {
+                    "action": "message",
+                    "args": {
+                        "message": "Hello world!!!"
+                    }
+                }
+            ]
+        },
+        {
+            "command": "furqat",
+            "actions": [
+                {
+                    "action": "chatAction",
+                    "args": {
+                        "action": "upload_photo"
+                    }
+                },
+                {
+                    "action": "message",
+                    "args": {
+                        "message": "FURQATTTTTTTTTTTTT"
+                    }
+                }
+            ]
+        }
+    ]
+}
