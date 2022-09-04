@@ -33,7 +33,7 @@ class CodeBuilder
         return $this->componentFiller->templateWithArray($main);
     }
 
-    public function buildCommands()
+    public function buildCommands(): bool|int
     {
         $component_commands = [];
         foreach ($this->parsed_tree->commands as $command) {
@@ -47,7 +47,7 @@ class CodeBuilder
 
 //        print_r($component_commands);
 //        echo $this->buildTemplate($component_commands);
-        return file_put_contents(public_path('codes/testing.php'), $this->buildTemplate($component_commands));
+        return file_put_contents(storage_path('app/bot_template/bot.php'), $this->buildTemplate($component_commands));
     }
 
 }

@@ -14,7 +14,7 @@ class ComponentFiller
     public function command($command, $main)
     {
 
-        $content = implode(SPACES_BETWEEN__LOOP, $main);
+        $content = implode(SPACES_BETWEEN_LOOP, $main);
 
         return fillCommandComponent(['command' => $command, 'main' => $content]);
     }
@@ -22,6 +22,10 @@ class ComponentFiller
     public function chatAction($args)
     {
         return fillChatActionComponent($args);
+    }
+
+    public function photo($args){
+        return fillPhotoComponent($args);
     }
 
     public function templateWithArray($main): string

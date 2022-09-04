@@ -1,53 +1,25 @@
 <?php
 
-
 require_once "vendor/autoload.php";
 
 try {
 
+    $bot = new \TelegramBot\Api\Client("857979679:AAFzdqivd4AQCf9RoOXHugYjaBvHf44dMTc");
 
-    $bot = new \TelegramBot\Api\Client('857979679:AAE7Wiw7juvL4bi_r4nUzUgTRX2s6oupgLs');
+    $bot->command("hello", function ($message) use ($bot){
 
+    $bot->sendChatAction($message->getChat()->getId(), "typing");
+    $bot->sendMessage($message->getChat()->getId(), "Hello world!!!");
 
-    $bot->command('ping', function ($message) use ($bot) {
+});
+    $bot->command("furqat", function ($message) use ($bot){
 
-        $bot->sendMessage($message->getChat()->getId(), 'nimadur');
-    });
+    $bot->sendChatAction($message->getChat()->getId(), "upload_photo");
+         $bot->sendPhoto($message->getChat()->getId(), "https://media.baamboozle.com/uploads/images/38415/1586344885_576331", "SENDING PHOTOOOOO");
+    $bot->sendMessage($message->getChat()->getId(), "rasm jonatiwwwwwwww");
+    $bot->sendMessage($message->getChat()->getId(), "keldiiiiiiiii");
 
-
-    $bot->command('start', function ($message) use ($bot) {
-        $chat_id = $message->getChat()->getId();
-
-        $keyboard = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup(
-            [
-                [
-                    ['text' => 'aaa', 'callback_data' => 'https://core.telegram.org'],
-                    ['text' => 'bbb', 'callback_data' => 'https://core.telegram.org'],
-                    ['text' => 'ccc', 'callback_data' => 'https://core.telegram.org'],
-                ],
-                [
-                    ['text' => 'aaa', 'callback_data' => 'https://core.telegram.org'],
-                    ['text' => 'bbb', 'callback_data' => 'https://core.telegram.org'],
-                ],
-            ]
-        );
-
-        $bot->sendMessage($chat_id, 'addddddddddddd', null, false, null, $keyboard);
-
-
-    });
-
-
-    $bot->setMyCommands([
-        [
-            "command" => 'start',
-            "description" => "BOshlash"
-        ],
-        [
-            "command" => 'ping',
-            "description" => 'Pong'
-        ]
-    ]);
+});
 
     $bot->run();
 

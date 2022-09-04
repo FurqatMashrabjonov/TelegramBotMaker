@@ -27,9 +27,22 @@
                     }
                 },
                 {
+                    "action": "photo",
+                    "args": {
+                        "caption": "SENDING PHOTOOOOO",
+                        "photo": "https://media.baamboozle.com/uploads/images/38415/1586344885_576331"
+                    }
+                },
+                {
                     "action": "message",
                     "args": {
-                        "message": "FURQATTTTTTTTTTTTT"
+                        "message": "rasm jonatiwwwwwwww"
+                    }
+                },
+                {
+                    "action": "message",
+                    "args": {
+                        "message": "keldiiiiiiiii"
                     }
                 }
             ]

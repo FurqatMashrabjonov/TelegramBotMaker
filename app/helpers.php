@@ -3,7 +3,7 @@
 
 use App\Helpers\Telegram\ComponentFiller;
 
-const SPACES_BETWEEN__LOOP = PHP_EOL . '    ';
+const SPACES_BETWEEN_LOOP = PHP_EOL . '    ';
 
 function componentFiller(): ComponentFiller
 {
@@ -35,10 +35,15 @@ function fillChatActionComponent($args)
     return filler($args, 'chatAction');
 }
 
+function fillPhotoComponent($args){
+    return filler($args, 'photo');
+}
+
 /////////////////////////////////////////////////////////////////////
 function filler($args, $component_name)
 {
     $component = getTemplates()[$component_name];
+    echo $component;
     foreach ($args as $key => $arg) {
         $tmp = explode("{{{$key}}}", $component);
         $component = $tmp[0] . $arg . $tmp[1];
@@ -54,8 +59,8 @@ function fillTemplate($args){
 
 function fillerTemplateWithArray($main): string
 {
-    $component = fillTemplate(['token' => '1234:fdFSDFSDFSDFSDWGGWEGSDHD']);
-    $main = implode(SPACES_BETWEEN__LOOP, $main);
+    $component = fillTemplate(['token' => '857979679:AAFzdqivd4AQCf9RoOXHugYjaBvHf44dMTc']);
+    $main = implode(SPACES_BETWEEN_LOOP, $main);
     $tmp  = explode('{{main}}', $component);
     return $tmp[0] . $main . $tmp[1];
 }

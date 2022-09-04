@@ -23,7 +23,7 @@ EOF,
 
     //command template
     "command" => <<<EOF
-\$bot->onCommand("{{command}}", function (\$message) use (\$bot){
+\$bot->command("{{command}}", function (\$message) use (\$bot){
 
     {{main}}
 
@@ -33,12 +33,16 @@ EOF,
     //Components
 
     "message" => <<<EOF
-\$bot->sendMessage(\$message->chat->id, "{{message}}", null, false, null);
+\$bot->sendMessage(\$message->getChat()->getId(), "{{message}}");
 EOF,
 
     "chatAction" => <<<EOF
-\$bot->sendChatAction(\$message->chat->id, '{{action}}');
+\$bot->sendChatAction(\$message->getChat()->getId(), "{{action}}");
 EOF,
+
+    "photo" => <<<EOF
+     \$bot->sendPhoto(\$message->getChat()->getId(), "{{photo}}", "{{caption}}");
+EOF
 
 
 ];
